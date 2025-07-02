@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#800080"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/app_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingStart="0dp"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="168dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/logo_hamburgueria"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/faca_seu_pedido"
+                style="@style/EstiloTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Faça seu pedido!"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:layout_marginBottom="16dp"/>
+
+            <EditText
+                android:id="@+id/nome_cliente"
+                style="@style/EstiloTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome do cliente"
+                android:inputType="text"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:id="@+id/tipo_lanche_label"
+                style="@style/EstiloTexto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tipo de Lanche:"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"/>
+
+            <RadioGroup
+                android:id="@+id/radio_group_lanche"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="16dp">
+
+                <RadioButton
+                    android:id="@+id/radio_x_burger"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="X-Burger" />
+
+                <RadioButton
+                    android:id="@+id/radio_x_salada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="X-Salada" />
+
+                <RadioButton
+                    android:id="@+id/radio_x_bacon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="X-Bacon" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/quantidade_lanches"
+                style="@style/EstiloTexto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Quantidade de lanches"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/subtrair"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#800080"
+                    android:text="-"
+                    app:cornerRadius="10dp" />
+
+                <TextView
+                    android:id="@+id/quantidade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="0"
+                    android:textSize="24sp"/>
+
+                <Button
+                    android:id="@+id/adicionar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#800080"
+                    android:text="+"
+                    app:cornerRadius="10dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/opcoesPedido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ADICIONAIS:"
+                android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                android:id="@+id/opcoesDePedido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <CheckBox
+                    android:id="@+id/bacon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Bacon" />
+
+                <CheckBox
+                    android:id="@+id/queijo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Queijo" />
+
+                <CheckBox
+                    android:id="@+id/onion_rings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Onion Rings" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/resumo_pedido"
+                style="@style/EstiloTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Resumo do pedido"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:id="@+id/valor_total"
+                style="@style/EstiloTexto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Valor Total: R$ 0"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:id="@+id/enviar_pedido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#800080"
+                android:text="Enviar Pedido"
+                app:cornerRadius="10dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
